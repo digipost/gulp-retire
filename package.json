@@ -1,6 +1,6 @@
 {
   "name": "gulp-retire",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Gulp plugin for Retire.js",
   "main": "index.js",
   "repository": "git@github.com:digipost/gulp-retire.git",
@@ -8,6 +8,10 @@
   "dependencies": {
     "gulp-util": "3.x.x",
     "minimist": "1.x.x",
+    "release-it": "^2.6.0",
     "retire": "1.x.x"
+  },
+  "scripts": {
+    "release": "./node_modules/release-it/bin/release.js"
   }
 }
