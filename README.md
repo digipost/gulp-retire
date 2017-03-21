@@ -15,6 +15,23 @@ npm install --save --only=dev git://github.com/digipost/gulp-retire#version
 
 ```
 
+Then, in your gulpfile
+
+```
+gulp.task('verify:retire', function (callback) {
+    const opts = {args: '--js --jspath build', done: callback }; 
+    retire.gulp(opts);
+});
+```
+
+## Supported options
+
+```
+args: Arguments passed directly to retire (see `retire --help`). Default: --node --package
+cwd: Folder in which to run retire. Default: process.cwd
+done: Callback function upon completion
+```
+
 ## Releasing
 
 Releases are created using [release-it](https://www.npmjs.com/package/release-it). Run as follows:
