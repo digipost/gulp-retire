@@ -8,8 +8,10 @@
   "dependencies": {
     "gulp-util": "3.x.x",
     "minimist": "1.x.x",
-    "release-it": "^2.6.0",
     "retire": "1.x.x"
+  },
+  "devDependencies": {
+    "release-it": "^2.6.0"
   },
   "scripts": {
     "release": "./node_modules/release-it/bin/release.js"
