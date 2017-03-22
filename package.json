@@ -1,6 +1,6 @@
 {
   "name": "gulp-retire",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Gulp plugin for Retire.js",
   "main": "index.js",
   "repository": "git@github.com:digipost/gulp-retire.git",
