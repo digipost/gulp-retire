@@ -1,6 +1,6 @@
 {
-  "name": "gulp-retire",
-  "version": "0.1.0",
+  "name": "@digipost/gulp-retire",
+  "version": "1.0.0",
   "description": "Gulp plugin for Retire.js",
   "main": "index.js",
   "repository": "git@github.com:digipost/gulp-retire.git",
@@ -10,10 +10,11 @@
     "minimist": "1.x.x",
     "retire": "1.x.x"
   },
-  "devDependencies": {
-    "release-it": "^2.6.0"
-  },
   "scripts": {
-    "release": "./node_modules/release-it/bin/release.js"
+    "release": "npm run verify:not-published",
+    "verify:not-published": "! npm show . versions -s --json | grep -q \\\"${npm_package_version}\\\""
+  },
+  "publishConfig": {
+    "registry": "https://repo3.dgp.st/repository/npm-private/"
   }
 }

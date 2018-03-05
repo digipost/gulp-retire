@@ -1,0 +1,25 @@
+clone:
+  git:
+    image: plugins/git
+    recursive: false
+    depth: 10
+
+pipeline:
+  build:
+    image: node:8.9-alpine
+    commands:
+      - apk add --no-cache git
+      - npm config set proxy $HTTP_PROXY
+      - npm config set https-proxy $HTTP_PROXY
+      - npm i
+      - npm run release
+
+  publish:
+    image: node:8.9-alpine
+    secrets: [ NPM_AUTH ]
+    when:
+      branch: master
+    commands:
+      - echo "_auth=$NPM_AUTH" >> ~/.npmrc
+      - echo "email=post@digipost.no" >> ~/.npmrc
+      - npm publish
